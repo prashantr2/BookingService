@@ -14,7 +14,7 @@ const createChannel = async() => {
 }
 
 const subscribeMessage = async(channel, service, binding_key) => {
-    const appQueue = await channel.assertQueue('QUEUE_NAME');
+    const appQueue = await channel.assertQueue('REMINDER_QUEUE');
     
     channel.bindQueue(appQueue.queue, EXCHANGE_NAME, binding_key);
     
